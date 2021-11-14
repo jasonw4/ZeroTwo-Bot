@@ -48,6 +48,8 @@ async def on_message(message):
     await message.channel.send(file=discord.File(random.choice(gifs)))
   elif message.content.startswith('-time'):
     await message.channel.send(datetime_NY.strftime("%H:%M:%S"))
+    if 0 <= int(datetime_NY.hour) <= 4:
+      await message.channel.send('Go to sleep...zzzz')
   elif message.content.startswith('-date'):
     await message.channel.send(datetime_NY.strftime("%m/%d/%Y"))
   elif message.content.startswith('-help'):
